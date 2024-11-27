@@ -1,6 +1,6 @@
-# Portfolio Vanilla Template
+# Portfolio
 
-Welcome to the **Portfolio Vanilla Template**! This repository is a template to help you quickly set up and customize your personal website or portfolio. Use this template as a base for showcasing your projects, skills, and experience.
+Welcome to my **Portfolio**! This repository is a template to help you quickly set up and customize your personal website or portfolio. Use this template as a base for showcasing your projects, skills, and experience.
 
 ## Getting Started
 
@@ -79,4 +79,3 @@ To update your portfolio in the future:
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).
-
