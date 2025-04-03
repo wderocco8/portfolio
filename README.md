@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce2b1432-c8f7-432a-a99d-b9dd7882bf8c/deploy-status)](https://app.netlify.com/sites/william-derocco/deploys)
+
 # React Portfolio Template
 
 Welcome to the **React Portfolio Template**! This repository is a template to help you quickly set up and customize your personal website or portfolio. Use this template as a base for showcasing your projects, skills, and experience.
