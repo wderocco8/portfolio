@@ -1,0 +1,26 @@
+.connect-container {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.connect-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.connect-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.connect-links a:hover {
+  transform: scale(1.1);
+}

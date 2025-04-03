@@ -1,0 +1,65 @@
+.profile-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+
+/************************** glowing border effect  ***************************/
+.profile-img {
+  border-radius: 50%;
+  width: 400px;
+  border: 5px solid #b97800;
+}
+
+/* source: https://www.youtube.com/watch?v=ezP4kbOvs_E&list=PLZ6KBrFKcaDtqcqHv9NUCpul8a2B3F33F&index=6 */
+.profile {
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.profile:hover::after,
+.profile:hover::before {
+  content: "";
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #bb4ec4,
+    #f148c8,
+    #2c12ed,
+    #ffa500,
+    #bb4ec4
+  );
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+  animation: 3s spin linear infinite;
+  transform: translate(0, 0);
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    background-image 0.5s ease-in-out;
+}
+
+.profile:hover::before {
+  filter: blur(2rem);
+  opacity: 1;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    background-image 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+/*****************************************************************************/
