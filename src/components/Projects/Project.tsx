@@ -1,3 +1,5 @@
+import { useDarkMode } from "../../hooks/useDarkMode";
+
 export interface ProjectProps {
   websiteHref: string;
   imgSrc: string;
@@ -17,6 +19,16 @@ export default function Project({
   title,
   description,
 }: ProjectProps) {
+  const isDarkMode = useDarkMode();
+
+  const finalImgSrc = (() => {
+    const dotIndex = imgSrc.lastIndexOf(".");
+    if (isDarkMode && dotIndex !== -1) {
+      return imgSrc.slice(0, dotIndex) + "-dark" + imgSrc.slice(dotIndex);
+    }
+    return imgSrc;
+  })();
+
   return (
     <a
       href={websiteHref}
@@ -25,7 +37,7 @@ export default function Project({
       className="project-link tilt tilt-small"
     >
       <div className="project">
-        <img src={imgSrc} alt={title} />
+        <img src={finalImgSrc} alt={title} />
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
