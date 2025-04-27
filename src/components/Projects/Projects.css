@@ -7,6 +7,12 @@
   /* filter: drop-shadow(#6c605d 8px 8px 8px ); */
 }
 
+@media (max-width: 1024px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* One project per row on smaller screens */
+  }
+}
+
 .project {
   background-color: var(--secondary-color);
   border-radius: 10px;
