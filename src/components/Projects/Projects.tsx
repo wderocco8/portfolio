@@ -8,16 +8,32 @@ import "./Projects.css";
 const projects: ProjectProps[] = [
   // Project 1
   {
-    websiteHref: "https://github.com/wderocco8/Grub-Gallery",
+    websiteHref: "https://github.com/whyphi",
     imgSrc: "/images/projects/project1.jpeg",
+    title: "WhyPhi",
+    description:
+      "WhyPhi is an all-in-one attendance and application management software that a few friends and I helped develop for my Business Fraternity (PCT). Since its creation, we have reached 70+ internal users and an additional 200+ external users.",
+  },
+  // Project 2
+  {
+    websiteHref: "https://github.com/Spark-Project-Pulse",
+    imgSrc: "/images/projects/project2.jpeg",
+    title: "CodeHive",
+    description:
+      "CodeHive is a platform which aims to help aspiring developers get contextual feedback on their questions/projects by linking source code directly to their questions.",
+  },
+  // Project 3
+  {
+    websiteHref: "https://github.com/wderocco8/Grub-Gallery",
+    imgSrc: "/images/projects/project3.jpeg",
     title: "Grub Gallery",
     description:
       "Grub Gallery is a dynamic web application built using the MERN stack, integrating Google OAuth, Spoonacular API, and Google Calendar API. This project allows users to discover and personalize dishes and recipes effortlessly.",
   },
-  // Project 2
+  // Project 4
   {
     websiteHref: "https://github.com/wderocco8/ZipSurf",
-    imgSrc: "/images/projects/project2.jpeg",
+    imgSrc: "/images/projects/project4.jpeg",
     title: "ZipSurf",
     description:
       "ZipSurf is a React based web application designed to enabling users to create, save, delete, and export shortened URLs.",

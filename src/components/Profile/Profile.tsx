@@ -40,7 +40,7 @@ export default function Profile() {
             options={{
               strings: profileData.typewriterName,
               autoStart: true,
-              loop: true,
+              loop: false,
               delay: 75,
             }}
           />
