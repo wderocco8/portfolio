@@ -1,20 +1,44 @@
+import { IconType } from "react-icons";
 import "./Connect.css";
+import { SiCalendly } from "react-icons/si";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
 
-interface ConnectData {
-  email: string;
-  linkedin: string;
-  github?: string;
+interface ConnectDataItem {
+  text: string;
+  url: string;
+  icon: IconType;
+  isEmail?: boolean;
 }
 
 /**
- * TODO: replace each `email`, `linkedin`, and `github`
- * with your personal information.
+ * TODO: replace each `email`, `linkedin`, `github`, and `calendly`
+ * with your personal information. You can delete whichever ones
+ * you don't have.
  */
-const connectData: ConnectData = {
-  email: "wderocco@bu.edu",
-  linkedin: "https://www.linkedin.com/in/william-derocco/",
-  github: "https://github.com/wderocco8", // TODO: delete this line if you don't have a GitHub (or just create one 🤠)
-};
+const connectData: ConnectDataItem[] = [
+  {
+    text: "Email",
+    url: "wderocco@bu.edu",
+    icon: MdAlternateEmail,
+    isEmail: true,
+  },
+  {
+    text: "LinkedIn",
+    url: "https://www.linkedin.com/in/william-derocco",
+    icon: FaLinkedin,
+  },
+  {
+    text: "GitHub",
+    url: "https://github.com/wderocco8",
+    icon: FaGithub,
+  },
+  {
+    text: "Calendly",
+    url: "https://calendly.com/williamderocco/networking_call",
+    icon: SiCalendly,
+  },
+];
 
 /**
  * `Connect` returns a unordered list (`ul`) of links. Be sure to
@@ -27,29 +51,23 @@ export default function Connect() {
       <div className="connect-container">
         <p>Feel free to reach out through any of these platforms:</p>
         <ul className="connect-links">
-          <li>
-            <a href={`mailto:${connectData.email}`}>📧 Email</a>
-          </li>
-          {connectData.github && (
-            <li>
-              <a
-                href={connectData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💻 GitHub
-              </a>
-            </li>
-          )}
-          <li>
-            <a
-              href={connectData.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              💼 LinkedIn
-            </a>
-          </li>
+          {connectData.map((item) => {
+            const isEmail = item.isEmail;
+            const href = isEmail ? `mailto:${item.url}` : item.url;
+            const target = isEmail ? "_blank" : undefined;
+            const rel = isEmail ? "noopener noreferrer" : undefined;
+
+            return (
+              <li>
+                <a href={href} target={target} rel={rel}>
+                  <div className="connect-link">
+                    <item.icon />
+                    {item.text}
+                  </div>
+                </a>
+              </li>
+            );
+          })}''
         </ul>
       </div>
     </>

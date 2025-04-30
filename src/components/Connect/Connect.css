@@ -6,6 +6,12 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.connect-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .connect-links {
   display: flex;
   justify-content: center;
