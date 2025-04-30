@@ -67,7 +67,7 @@ export default function Connect() {
                 </a>
               </li>
             );
-          })}''
+          })}
         </ul>
       </div>
     </>
