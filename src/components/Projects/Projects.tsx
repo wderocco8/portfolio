@@ -48,7 +48,7 @@ const projects: ProjectProps[] = [
  */
 export default function Projects() {
   return (
-    <>
+    <div>
       <h2 id="projects">Projects</h2>
       <div className="projects-container">
         {projects.map((project, index) => (
@@ -61,6 +61,6 @@ export default function Projects() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

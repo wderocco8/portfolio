@@ -1,0 +1,143 @@
+/**** OLD STYLES ****/
+/* TODO: Replace following colors with your preferred themes */
+
+:root {
+  /* Light mode colors */
+  --primary-color: hsl(197, 98%, 80%);
+  --secondary-color: hsl(15, 80%, 94%);
+  --text-color: hsl(0, 0%, 0%);
+  --accent-color: hsla(27, 94%, 87%, 0.529);
+  --nav-background: hsl(197, 98%, 80%, 0.7);
+  --link-hover-color: hsl(0, 0%, 0%);
+  --chatbot-assistant: hsl(0, 0%, 94%);
+
+  /* Dark mode colors */
+  --primary-color-dark: hsl(214, 21%, 30%);
+  --secondary-color-dark: hsl(210, 29%, 24%);
+  --text-color-dark: hsl(0, 0%, 94%);
+  --accent-color-dark: hsl(0, 0%, 37%);
+  --nav-background-dark: hsl(214, 21%, 30%, 0.7);
+  --link-hover-color-dark: hsl(0, 0%, 100%);
+  --chatbot-assistant-dark: hsl(0, 0%, 37%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background-image: linear-gradient(to bottom, var(--primary-color), #ffffff87);
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 80%;
+  margin: 80px auto;
+  padding-top: 80px;
+}
+
+.content-separator {
+  height: 60px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 20px;
+  line-height: 200%;
+  padding-left: 0;
+  margin: 0;
+}
+
+/************************** ui  ***************************/
+
+.input {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-color: var(--accent-color);
+  border-radius: 4px;
+  font-size: 14px;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.button {
+  align-self: flex-end;
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color) 90%,
+    var(--text-color)
+  );
+}
+
+/************************** dark mode  ***************************/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --text-color: var(--text-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --nav-background: var(--nav-background-dark);
+    --link-hover-color: var(--link-hover-color-dark);
+    --chatbot-assistant: var(--chatbot-assistant-dark);
+  }
+
+  body {
+    background-image: linear-gradient(to bottom, var(--primary-color), #5f5f5f84);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  a {
+    color: var(--link-hover-color-dark);
+  }
+
+  .navbar {
+    background-color: var(--nav-background);
+  }
+
+  .project {
+    background-color: var(--secondary-color);
+  }
+
+  .interests-table-container {
+    background-color: var(--secondary-color);
+  }
+
+  /* Dark mode text and links */
+  .nav-links a {
+    color: var(--text-color);
+  }
+
+  .nav-links a:hover {
+    color: var(--link-hover-color);
+  }
+}

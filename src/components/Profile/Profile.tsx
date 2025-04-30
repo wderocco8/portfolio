@@ -1,8 +1,8 @@
 import Typewriter from "typewriter-effect";
-import "./Profile.css"
+import "./Profile.css";
 
 interface ProfileData {
-  typewriterName: string[];
+  typewriter: string[];
   graduatingClass: number;
   majorMinor: string;
   websiteHref: string;
@@ -15,7 +15,7 @@ interface ProfileData {
  * `websiteHref`, and `imgSrc` with your personal information.
  */
 const profileData: ProfileData = {
-  typewriterName: [
+  typewriter: [
     "Heyo peeps, I'm Will.",
     "I love to learn.",
     "William De Rocco :)",
@@ -24,7 +24,7 @@ const profileData: ProfileData = {
   majorMinor: "B.A. in Computer Science, Minor in Economics",
   websiteHref: "https://github.com/wderocco8",
   imgSrc: "/images/profile/profile.jpeg",
-  currentPosition: "Teaching Assistant for cs412 (Full-Stack Applications)"
+  currentPosition: "Teaching Assistant for cs412 (Full-Stack Applications)",
 };
 
 /**
@@ -38,8 +38,9 @@ export default function Profile() {
         <h1>
           <Typewriter
             options={{
-              strings: profileData.typewriterName,
+              strings: profileData.typewriter,
               autoStart: true,
+              loop: true,
               delay: 75,
             }}
           />

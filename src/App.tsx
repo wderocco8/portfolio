@@ -1,7 +1,7 @@
 import About from "./components/About/About";
 import Activities from "./components/Activities/Activities";
 import Connect from "./components/Connect/Connect";
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Projects from "./components/Projects/Projects";
 import { fadeInTableRows } from "./utils/fadeInTable";
@@ -15,30 +15,25 @@ function App() {
   };
 
   return (
-    <>
-      {/* Navigation bar */}
-      <Navbar />
+    <div className="scroll-smooth ">
+      {/* <Navbar /> */}
 
-      <div className="container">
-        {/* Name and Profile --> */}
+      <div className="w-3/4 flex flex-col gap-16 mx-auto mt-56 font-[Courier_New]">
         {/* TODO: navigate to `components/Profile/Profile.tsx and update all TODO:s */}
         <Profile />
 
         <div className="content-separator"></div>
 
-        {/* Short Bio */}
         {/* TODO: navigate to `components/About/About.tsx and update all TODO:s */}
         <About />
 
         <div className="content-separator"></div>
 
-        {/* Projects */}
         {/* TODO: navigate to `components/Projects/Projects.tsx and update all TODO:s */}
         <Projects />
 
         <div className="content-separator"></div>
 
-        {/* Activites and --> */}
         {/* TODO: navigate to `components/Activities/Activities.tsx and update all TODO:s */}
         <Activities />
 
@@ -50,12 +45,11 @@ function App() {
 
         <div className="content-separator"></div>
 
-        {/* chatbot Section */}
         {/* TODO: navigate to `components/Chatbot/Chatbot.tsx and update all TODO:s */}
-        {/* Chatbot is inactive (not using OpenAPI token to save money, find a free alternaitve in the future) */}
+        {/* NOTE: Chatbot is inactive (not using OpenAPI token to save money, find a free alternaitve in the future) */}
         {/* <Chatbot /> */}
       </div>
-    </>
+    </div>
   );
 }
 

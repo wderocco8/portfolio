@@ -113,7 +113,7 @@ const activities: ActivityProps[] = [
  */
 export default function Activities() {
   return (
-    <>
+    <div>
       {/* TODO: with your info --> */}
       <h2 id="interests">How I spend my free time?</h2>
       <div className="interests-table-container">
@@ -132,6 +132,6 @@ export default function Activities() {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 }

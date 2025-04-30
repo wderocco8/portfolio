@@ -28,9 +28,9 @@ const aboutData: AboutData = {
 
 export default function About() {
   return (
-    <>
+    <div>
       <h2 id="about">About me</h2>
       {aboutData.info}
-    </>
+    </div>
   );
 }

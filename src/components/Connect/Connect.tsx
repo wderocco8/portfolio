@@ -46,7 +46,7 @@ const connectData: ConnectDataItem[] = [
  */
 export default function Connect() {
   return (
-    <>
+    <div>
       <h2 id="connect">Let's Connect</h2>
       <div className="connect-container">
         <p>Feel free to reach out through any of these platforms:</p>
@@ -70,6 +70,6 @@ export default function Connect() {
           })}
         </ul>
       </div>
-    </>
+    </div>
   );
 }

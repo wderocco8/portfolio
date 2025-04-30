@@ -9,6 +9,8 @@ import {
   ChatCompletionMessageParam,
 } from "openai/resources.mjs";
 
+// DISCLAIMER: THIS FILE IS TEMPORARILY DEPRECATED (MABYE WILL ADD BACK IF WE CREATE A REAL "BACKEND")
+
 // TODO: replace this with your actual experiences (you can write MUCH more than I did...)
 const USER_BACKGROUND = `
 My Name is William De Rocco.
@@ -44,20 +46,19 @@ export default function Chatbot() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const chatboxRef = useRef<HTMLDivElement>(null);
 
-
   useEffect(() => {
     const scrollToBottom = () => {
       if (isLoading && chatboxRef.current) {
         chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
       }
     };
-  
+
     // Scroll to bottom immediately when loading starts
     scrollToBottom();
-  
+
     // Set up an interval to continuously scroll while loading
     const scrollInterval = setInterval(scrollToBottom, 100);
-  
+
     // Clear the interval when loading is false
     return () => {
       clearInterval(scrollInterval);
