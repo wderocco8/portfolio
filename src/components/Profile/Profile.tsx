@@ -35,7 +35,7 @@ export default function Profile() {
   return (
     <div className="profile-flex">
       <div>
-        <h1>
+        <h1 className="text-4xl font-bold mb-4">
           <Typewriter
             options={{
               strings: profileData.typewriter,

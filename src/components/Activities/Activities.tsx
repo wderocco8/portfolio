@@ -115,7 +115,7 @@ export default function Activities() {
   return (
     <div>
       {/* TODO: with your info --> */}
-      <h2 id="interests">How I spend my free time?</h2>
+      <h2 className="text-2xl font-bold mb-4" id="interests">How I spend my free time?</h2>
       <div className="interests-table-container">
         <table className="interests-table">
           <tbody>

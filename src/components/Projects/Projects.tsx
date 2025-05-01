@@ -49,7 +49,9 @@ const projects: ProjectProps[] = [
 export default function Projects() {
   return (
     <div>
-      <h2 id="projects">Projects</h2>
+      <h2 className="text-2xl font-bold mb-4" id="projects">
+        Projects
+      </h2>
       <div className="projects-container">
         {projects.map((project, index) => (
           <Project

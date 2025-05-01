@@ -169,8 +169,10 @@ export default function Chatbot() {
   };
 
   return (
-    <>
-      <h2 id="chatbot">Chatbot</h2>
+    <div>
+      <h2 className="text-2xl font-bold mb-4" id="chatbot">
+        Chatbot
+      </h2>
       <div className="chatbot-container">
         <div className="chatbox-messages" ref={chatboxRef}>
           {messages.length === 0 ? (
@@ -218,6 +220,6 @@ export default function Chatbot() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

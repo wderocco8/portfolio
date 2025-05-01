@@ -47,7 +47,9 @@ const connectData: ConnectDataItem[] = [
 export default function Connect() {
   return (
     <div>
-      <h2 id="connect">Let's Connect</h2>
+      <h2 className="text-2xl font-bold mb-4" id="connect">
+        Let's Connect
+      </h2>
       <div className="connect-container">
         <p>Feel free to reach out through any of these platforms:</p>
         <ul className="connect-links">
