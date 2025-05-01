@@ -1,4 +1,5 @@
-import { useDarkMode } from "../../hooks/useDarkMode";
+import { useDarkMode } from "@/hooks/useDarkMode";
+import "@/components/Projects/Projects.css";
 
 export interface ProjectProps {
   websiteHref: string;

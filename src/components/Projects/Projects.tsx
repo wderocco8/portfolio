@@ -1,5 +1,4 @@
 import Project, { ProjectProps } from "./Project";
-import "./Projects.css";
 
 /**
  * TODO: replace each `websiteHref`, `imgSrc`, `title`, and `description`
@@ -52,7 +51,7 @@ export default function Projects() {
       <h2 className="text-2xl font-bold mb-4" id="projects">
         Projects
       </h2>
-      <div className="projects-container">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <Project
             key={index}
