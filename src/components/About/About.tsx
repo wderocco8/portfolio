@@ -9,7 +9,7 @@ interface AboutData {
  */
 const aboutData: AboutData = {
   info: (
-    <>
+    <div className="space-y-4">
       <p>
         Hello there, my name is Will, and I'm originally from Manhattan,
         although I have lived in a few other cities, my family has found our way
@@ -22,7 +22,7 @@ const aboutData: AboutData = {
         free to check out my <a href="https://github.com/wderocco8">GitHub</a>{" "}
         😁.
       </p>
-    </>
+    </div>
   ),
 };
 

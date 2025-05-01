@@ -18,7 +18,7 @@ function App() {
     <div className="scroll-smooth ">
       {/* <Navbar /> */}
 
-      <div className="w-3/4 flex flex-col gap-16 mx-auto mt-56 font-[Courier_New]">
+      <div className="w-3/4 flex flex-col gap-12 mx-auto mt-56 font-[Courier_New]">
         {/* TODO: navigate to `components/Profile/Profile.tsx and update all TODO:s */}
         <Profile />
 
