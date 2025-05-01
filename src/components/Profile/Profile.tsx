@@ -33,7 +33,7 @@ const profileData: ProfileData = {
  */
 export default function Profile() {
   return (
-    <div className="profile-flex">
+    <div className="flex flex-col-reverse items-center justify-between gap-14 lg:flex-row">
       <div>
         <h1 className="text-4xl font-bold mb-4">
           <Typewriter
@@ -45,7 +45,7 @@ export default function Profile() {
             }}
           />
         </h1>
-        <ul>
+        <ul className="[&>li]:py-2 [&>li]:border-b [&>li]:border-dotted [&>li]:border-foreground [&>li:last-child]:border-none">
           <li>Class of {profileData.graduatingClass}</li>
           <li>{profileData.majorMinor}</li>
           {profileData.currentPosition && (
@@ -53,7 +53,6 @@ export default function Profile() {
           )}
         </ul>
       </div>
-
       <div className="profile tilt">
         <a
           href={profileData.websiteHref}
@@ -61,7 +60,7 @@ export default function Profile() {
           rel="noopener noreferrer"
         >
           <img
-            className="profile-img"
+            className="rounded-full border-4"
             src={profileData.imgSrc}
             alt="Profile picture."
           />

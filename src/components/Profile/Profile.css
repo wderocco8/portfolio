@@ -1,34 +1,4 @@
-.profile-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.profile-flex li {
-  padding: 8px 0;
-  border-bottom: 1px dotted var(--text-color);
-}
-
-.profile-flex li:last-child {
-  border-bottom: none;
-}
-
-@media (max-width: 1024px) {
-  .profile-flex {
-    flex-direction: column-reverse;
-  }
-}
-
 /************************** glowing border effect  ***************************/
-.profile-img {
-  border-radius: 50%;
-  width: 100%;
-  max-width: 400px;
-  border: 5px solid #b97800;
-  height: auto;
-  display: block;
-}
 
 /* source: https://www.youtube.com/watch?v=ezP4kbOvs_E&list=PLZ6KBrFKcaDtqcqHv9NUCpul8a2B3F33F&index=6 */
 .profile {
