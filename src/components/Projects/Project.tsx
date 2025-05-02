@@ -1,5 +1,5 @@
-import { useDarkMode } from "@/hooks/useDarkMode";
 import "@/components/Projects/Projects.css";
+import { useTheme } from "@/providers/theme-provider";
 
 export interface ProjectProps {
   websiteHref: string;
@@ -20,11 +20,11 @@ export default function Project({
   title,
   description,
 }: ProjectProps) {
-  const isDarkMode = useDarkMode();
+  const { resolvedTheme } = useTheme();
 
   const finalImgSrc = (() => {
     const dotIndex = imgSrc.lastIndexOf(".");
-    if (isDarkMode && dotIndex !== -1) {
+    if (resolvedTheme === "dark" && dotIndex !== -1) {
       return imgSrc.slice(0, dotIndex) + "-dark" + imgSrc.slice(dotIndex);
     }
     return imgSrc;
