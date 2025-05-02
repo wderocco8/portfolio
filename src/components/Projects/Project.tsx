@@ -1,5 +1,10 @@
-import "@/components/Projects/Projects.css";
 import { useTheme } from "@/providers/theme-provider";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export interface ProjectProps {
   websiteHref: string;
@@ -35,13 +40,17 @@ export default function Project({
       href={websiteHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="project-link tilt tilt-small"
+      className="tilt tilt-small"
     >
-      <div className="project">
-        <img src={finalImgSrc} alt={title} />
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
+      <Card className="h-full p-4">
+        <div className="rounded-lg overflow-hidden">
+          <img src={finalImgSrc} alt={title} className="w-full object-cover" />
+        </div>
+        <CardHeader className="p-0 pt-4">
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </CardHeader>
+      </Card>
     </a>
   );
 }
