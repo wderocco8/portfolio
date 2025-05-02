@@ -32,28 +32,39 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   );
-  const resolvedTheme: ResolvedTheme = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches
-    ? "dark"
-    : "light";
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  );
 
   useEffect(() => {
     const root = window.document.documentElement;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    root.classList.remove("light", "dark");
+    const applyTheme = (theme: Theme) => {
+      root.classList.remove("light", "dark");
+      if (theme === "system") {
+        const systemTheme = mediaQuery.matches ? "dark" : "light";
+        root.classList.add(systemTheme);
+        setResolvedTheme(systemTheme);
+      } else {
+        root.classList.add(theme);
+        setResolvedTheme(theme);
+      }
+    };
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+    applyTheme(theme); // Apply theme on initial useEffect mount
 
-      root.classList.add(systemTheme);
-      return;
-    }
+    const handleChange = () => {
+      if (theme === "system") {
+        applyTheme("system");
+      }
+    };
 
-    root.classList.add(theme);
+    mediaQuery.onchange = handleChange;
+
+    return () => {
+      mediaQuery.onchange = null;
+    };
   }, [theme]);
 
   const value = {
@@ -72,6 +83,7 @@ export function ThemeProvider({
   );
 }
 
+// TODO: maybe split this into a separate file
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 
