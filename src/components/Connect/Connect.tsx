@@ -1,8 +1,8 @@
 import { IconType } from "react-icons";
-import "./Connect.css";
 import { SiCalendly } from "react-icons/si";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface ConnectDataItem {
   text: string;
@@ -50,28 +50,30 @@ export default function Connect() {
       <h2 className="text-2xl font-bold mb-4" id="connect">
         Let's Connect
       </h2>
-      <div className="connect-container">
-        <p>Feel free to reach out through any of these platforms:</p>
-        <ul className="connect-links">
-          {connectData.map((item) => {
-            const isEmail = item.isEmail;
-            const href = isEmail ? `mailto:${item.url}` : item.url;
-            const target = isEmail ? "_blank" : undefined;
-            const rel = isEmail ? "noopener noreferrer" : undefined;
-
-            return (
-              <li>
-                <a href={href} target={target} rel={rel}>
-                  <div className="connect-link">
-                    <item.icon />
-                    {item.text}
-                  </div>
+      <Card>
+        <CardHeader>
+          <h3 className="text-xl mx-auto ">
+            Feel free to reach out through any of these platforms:
+          </h3>
+        </CardHeader>
+        <CardContent>
+          <ul className="flex justify-center flex-wrap gap-8">
+            {connectData.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.isEmail ? `mailto:${item.url}` : item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:scale-105 transition"
+                >
+                  <item.icon />
+                  {item.text}
                 </a>
               </li>
-            );
-          })}
-        </ul>
-      </div>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
     </div>
   );
 }
