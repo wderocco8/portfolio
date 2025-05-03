@@ -129,7 +129,10 @@ export default function Activities() {
       <Carousel className="w-full ">
         <CarouselContent>
           {activities.map((activity, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3">
+            <CarouselItem
+              key={index}
+              className="hover:cursor-pointer md:basis-1/2 xl:basis-1/3"
+            >
               <div className="p-1">
                 <Card className="p-0 aspect-square overflow-hidden">
                   <img
