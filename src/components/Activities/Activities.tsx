@@ -1,5 +1,13 @@
 import Activity, { ActivityProps } from "./Activity";
 import "./Activities.css";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 /**
  * TODO: replace each `imgSrc`, `imgAlt`, `title`, `description`
@@ -115,23 +123,28 @@ export default function Activities() {
   return (
     <div>
       {/* TODO: with your info --> */}
-      <h2 className="text-2xl font-bold mb-4" id="interests">How I spend my free time?</h2>
-      <div className="interests-table-container">
-        <table className="interests-table">
-          <tbody>
-            {activities.map((activity, index) => (
-              <Activity
-                key={index}
-                imgSrc={activity.imgSrc}
-                imgAlt={activity.imgAlt}
-                title={activity.title}
-                description={activity.description}
-                quicklinks={activity.quicklinks}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <h2 className="text-2xl font-bold mb-4" id="interests">
+        How I spend my free time?
+      </h2>
+      <Carousel className="w-full ">
+        <CarouselContent>
+          {activities.map((activity, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3">
+              <div className="p-1">
+                <Card className="p-0 aspect-square overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={activity.imgSrc}
+                    alt={activity.imgAlt}
+                  />
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 }
