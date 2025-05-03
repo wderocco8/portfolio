@@ -53,7 +53,7 @@ export default function Connect() {
       <Card>
         <CardHeader>
           <h3 className="text-xl mx-auto ">
-            Feel free to reach out through any of these platforms:
+            Feel free to reach out, I'd love to chat!
           </h3>
         </CardHeader>
         <CardContent>
