@@ -6,18 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
 import { type Activity } from "@/types/Activities";
+import React from "react";
+import { ResponsiveModal } from "@/components/Activities/responsive-modal";
 
 /**
  * TODO: replace each `imgSrc`, `imgAlt`, `title`, `description`
@@ -130,6 +121,8 @@ const activities: Activity[] = [
  * only edit list of `activities` above.)
  */
 export default function Activities() {
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+
   return (
     <div>
       {/* TODO: with your info --> */}
@@ -139,51 +132,28 @@ export default function Activities() {
       <Carousel className="w-full ">
         <CarouselContent>
           {activities.map((activity, index) => (
-            <Drawer>
-              <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3">
-                <div className="p-1">
-                  <DrawerTrigger>
-                    <Card className="hover:cursor-pointer p-0 aspect-square overflow-hidden">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={activity.imgSrc}
-                        alt={activity.imgAlt}
-                      />
-                    </Card>
-                  </DrawerTrigger>
-                </div>
-              </CarouselItem>
-              <DrawerContent>
-                <DrawerHeader>
-                  <DrawerTitle>{activity.title}</DrawerTitle>
-                  <DrawerDescription>{activity.description}</DrawerDescription>
-                  {activity.quicklinks.length > 0 && (
-                    <div className="mt-4 space-y-1">
-                      <h4 className="font-semibold text-sm">Quicklinks</h4>
-                      <ul className="text-muted-foreground list-disc list-inside ml-4 space-y-1">
-                        {activity.quicklinks.map((link, i) => (
-                          <li key={i}>
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              {link.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </DrawerHeader>
-                <DrawerFooter>
-                  <DrawerClose>
-                    <Button variant="outline">Cancel</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 xl:basis-1/3"
+              onClick={() => setOpenIndex(index)}
+            >
+              <div className="p-1">
+                <Card className="hover:cursor-pointer p-0 aspect-square overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={activity.imgSrc}
+                    alt={activity.imgAlt}
+                  />
+                </Card>
+              </div>
+              {openIndex === index && (
+                <ResponsiveModal
+                  open={true}
+                  onOpenChange={(isOpen) => !isOpen && setOpenIndex(null)}
+                  activity={activity}
+                />
+              )}
+            </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
