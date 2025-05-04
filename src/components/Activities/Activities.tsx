@@ -1,3 +1,4 @@
+import Autoplay from "embla-carousel-autoplay"
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
@@ -129,7 +130,14 @@ export default function Activities() {
       <h2 className="text-2xl font-bold mb-4" id="interests">
         How I spend my free time?
       </h2>
-      <Carousel className="w-full ">
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        className="w-full "
+      >
         <CarouselContent>
           {activities.map((activity, index) => (
             <CarouselItem
