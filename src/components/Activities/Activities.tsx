@@ -133,7 +133,7 @@ export default function Activities() {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 3000,
           }),
         ]}
         className="w-full "

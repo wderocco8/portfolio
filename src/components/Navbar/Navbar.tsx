@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
-import "./Navbar.css"
+
+type NavLink = { href: string; label: string };
+
+// TODO: add/remove links as needed
+const navLinks: NavLink[] = [
+  { href: "#", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#interests", label: "Interests" },
+  { href: "#connect", label: "Connect" },
+];
 
 /**
  * `Navbar` returns an unordered list of navbar items. You
@@ -31,27 +41,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${visible ? "visible" : "hidden"}`}>
-      <ul className="nav-links">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#interests">Interests</a>
-        </li>
-        <li>
-          <a href="#connect">Connect</a>
-        </li>
-        {/* Chatbot is inactive (not using OpenAPI token to save money, find a free alternaitve in the future) */}
-        {/* <li>
-          <a href="#chatbot">Chatbot</a>
-        </li> */}
+    <nav
+      className={`sticky top-4 mx-auto w-fit z-50 transition-transform duration-700 ${
+        visible ? "translate-y-0" : "-translate-y-[calc(100%+1rem)]"
+      } backdrop-blur-md rounded-lg px-6 py-4 bg-background/50
+      }`}
+    >
+      <ul className="flex justify-center gap-8 flex-wrap">
+        {navLinks.map(({ href, label }, index) => (
+          <li key={index} className="hover:scale-105 transition">
+            <a href={href}>{label}</a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
