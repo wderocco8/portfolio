@@ -47,7 +47,7 @@ const activities: Activity[] = [
   {
     imgSrc: "/images/activities/activity2.jpeg",
     imgAlt: "Rock climbing at FitRec.",
-    title: "Rock Climbings",
+    title: "Rock Climbing",
     description: (
       <div className="space-y-2">
         <p>
@@ -146,15 +146,15 @@ export default function Activities() {
                   />
                 </Card>
               </div>
-              {openIndex === index && (
-                <ResponsiveModal
-                  open={true}
-                  onOpenChange={(isOpen) => !isOpen && setOpenIndex(null)}
-                  activity={activity}
-                />
-              )}
             </CarouselItem>
           ))}
+          {openIndex !== null && (
+            <ResponsiveModal
+              open={true}
+              onOpenChange={(isOpen) => !isOpen && setOpenIndex(null)}
+              activity={activities[openIndex]}
+            />
+          )}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

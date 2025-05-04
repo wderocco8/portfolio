@@ -91,7 +91,9 @@ export function ResponsiveModal({
         )}
         <DrawerFooter className="pt-2">
           <DrawerClose>
-            <Button variant="outline">Close</Button>
+            <Button className="w-full" variant="outline">
+              Close
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
