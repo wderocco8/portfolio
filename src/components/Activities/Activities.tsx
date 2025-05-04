@@ -138,12 +138,19 @@ export default function Activities() {
               onClick={() => setOpenIndex(index)}
             >
               <div className="p-1">
-                <Card className="hover:cursor-pointer p-0 aspect-square overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={activity.imgSrc}
-                    alt={activity.imgAlt}
-                  />
+                <Card className=" hover:cursor-pointer p-0 aspect-square overflow-hidden group relative">
+                  <div className="w-full h-full">
+                    <img
+                      className="w-full h-full object-cover"
+                      src={activity.imgSrc}
+                      alt={activity.imgAlt}
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <h3 className="text-white text-xl font-semibold">
+                        {activity.title}
+                      </h3>
+                    </div>
+                  </div>
                 </Card>
               </div>
             </CarouselItem>
