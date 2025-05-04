@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import Button from "../ui_old/Button";
-import Input from "../ui_old/Input";
 import React from "react";
 import "./Chatbot.css";
 import OpenAI from "openai";
@@ -8,6 +6,8 @@ import {
   ChatCompletionCreateParamsStreaming,
   ChatCompletionMessageParam,
 } from "openai/resources.mjs";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 // DISCLAIMER: THIS FILE IS TEMPORARILY DEPRECATED (MABYE WILL ADD BACK IF WE CREATE A REAL "BACKEND")
 
